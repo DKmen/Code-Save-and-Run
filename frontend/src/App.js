@@ -1,17 +1,18 @@
-import React, { useState } from "react";
-import { Container } from "@material-ui/core";
-import CodeInput from "./components/CodeInput";
-import FunctionContainer from "./components/Container";
+import React from "react";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 
+import AdminPage from "./page/admin";
+import DashbordPage from "./page/dashbord";
 function App() {
-
-  const [functionIdArray , setFunctionIdArray] = useState([]);
-
   return (
-    <Container>
-      <CodeInput idArray={functionIdArray} addArray={setFunctionIdArray}/>
-      <FunctionContainer idArray={functionIdArray}/>
-    </Container>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<AdminPage />} />
+          <Route path="/course/:name" element={<DashbordPage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

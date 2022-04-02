@@ -1,6 +1,6 @@
-function Company(){
- return 'My company name is AD'
+function f1(){
+ return 'f1f1'
 }
   
-    const data = Company();
+    const data = f1();
     module.exports= data;
